@@ -1,7 +1,7 @@
 const API_URL = 'http://localhost:3000/register';
 
 const express = require('express');
-const usuariosRoutes = require('./src/routes/UsuariosRoutes');
+const usuariosRoutes = require('./Routes/UsuariosRoutes');
 
 const app = express();
 

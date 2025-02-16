@@ -23,7 +23,7 @@ async function obtenerUsuarios() {
 
 async function guardarUsuarios(usuarios) {
   try {
-    console.log("Guardando usuarios:", JSON.stringify(usuarios, null, 2)); // <-- Agrega esto
+    console.log("Guardando usuarios:", JSON.stringify(usuarios, null, 2)); 
     await fs.writeFile('Usuarios.json', JSON.stringify(usuarios, null, 2));
   } catch (error) {
     console.error('Error al guardar usuarios:', error);
