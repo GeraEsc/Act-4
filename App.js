@@ -13,7 +13,7 @@ module.exports = app;
 
 
 // Función para registrar un usuario
-document.getElementById('registration-form').addEventListener('submit', async function(event) {
+document.getElementById('registration-form'),('submit', async function(event) {
     event.preventDefault();
 
     const username = document.getElementById('username').value;

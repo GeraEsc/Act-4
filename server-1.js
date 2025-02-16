@@ -13,28 +13,34 @@ const SECRET_KEY = 'mysecretkey'; // En producción, usar variables de entorno
 // Funciones para manejar usuarios
 async function obtenerUsuarios() {
   try {
-    const data = await fs.readFile('Usuarios.json', 'utf8');
+    const data = await fs.readFile('./data/Usuarios.json', 'utf8');
+    console.log('Usuarios leídos:', data);  // Verifica que se lee correctamente
     return JSON.parse(data);
   } catch (error) {
-    // Si no hay archivo o hay un error, devuelve un array vacío
-    return [];
+    console.error('Error al leer usuarios:', error);
+    return []; // Devuelve un array vacío si no se puede leer el archivo
   }
 }
 
+
 async function guardarUsuarios(usuarios) {
   try {
-    console.log("Guardando usuarios:", JSON.stringify(usuarios, null, 2)); 
-    await fs.writeFile('Usuarios.json', JSON.stringify(usuarios, null, 2));
+    console.log("Guardando usuarios:", usuarios); // Verifica los datos que se van a guardar
+    await fs.writeFile('./data/Usuarios.json', JSON.stringify(usuarios, null, 2));
+    console.log("Usuarios guardados correctamente");
   } catch (error) {
     console.error('Error al guardar usuarios:', error);
   }
 }
 
 
+
+
 // Función para registrar usuario
 app.post('/register', async (req, res) => {
   try {
     const { username, password } = req.body;
+    console.log('Datos recibidos en la solicitud:', req.body);
 
     // Verificar que los campos no estén vacíos
     if (!username || !password) {
