@@ -7,7 +7,7 @@ Git: Si deseas clonar el repositorio, instala Git.
 
 
 Clonar el repositorio
-git clone https://github.com/tu-usuario/Act-4.git
+git clone https://github.com/GeraEsc/Act-4
 cd Act-4
 
 
